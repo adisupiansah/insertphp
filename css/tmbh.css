@@ -1,0 +1,10 @@
+body {
+    background-color: #6499E9;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+}

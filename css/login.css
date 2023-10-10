@@ -1,0 +1,17 @@
+
+body{
+    background-color: #6499E9;
+}
+
+h1{
+    text-align: center;
+}
+.container{
+    margin-top: 90px;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: red;
+}
