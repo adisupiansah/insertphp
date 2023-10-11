@@ -1,1 +1,0 @@
-# ini hanyalah website upload & hapus
