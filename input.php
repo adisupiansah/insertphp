@@ -2,7 +2,7 @@
 // menyambungkan ke file functions.php
 require 'functions.php';
 
-$daftar = query ("SELECT * FROM daftar");
+$daftar = query("SELECT * FROM daftar");
 
 ?>
 
@@ -31,12 +31,12 @@ $daftar = query ("SELECT * FROM daftar");
         </div>
     </nav>
 
-        <h1>Data Mahasiswa Universitas Terbuka Tahun Ajaran 2023/2024</h1>
+    <h1>Data Mahasiswa Universitas Terbuka Tahun Ajaran 2023/2024</h1>
 
-        <br>
+    <br>
 
-        <a class="tmbh" href="tambah.php">Tambah Data</a> |
-        <a class="btn btn-primary" href="index.php">Home</a>
+    <a class="tmbh" href="tambah.php">Tambah Data</a> |
+    <a class="btn btn-primary" href="index.php">Home</a>
 
     <table class="table">
         <thead>
@@ -53,22 +53,22 @@ $daftar = query ("SELECT * FROM daftar");
         </thead>
         <tbody>
             <?php $hitung = 1; ?>
-            <?php foreach($daftar as $pensil) : ?>
-            <tr>
-                <td><?= $hitung;?></td>
-                <td>
-                    <a class="buton" href="">Ubah</a> |
-                    <a class="hapus" href="hapus.php?id=<?= $pensil["id"]; ?>">Hapus</a>
-                </td>
-                <td><img src="img/<?= $pensil["gambar"]; ?>" width="60"></td>
-                <td><?= $pensil["nim"]; ?></td>
-                <td><?= $pensil["nama"]; ?></td>
-                <td><?= $pensil["fakultas"]; ?></td>
-                <td><?= $pensil["prodi"]; ?></td>
-                <td><?= $pensil["email"]; ?></td>
-            </tr>
-            <?php $hitung++; ?>
-            <?php endforeach?>
+            <?php foreach ($daftar as $pensil) : ?>
+                <tr>
+                    <td><?= $hitung; ?></td>
+                    <td>
+                        <a class="buton" href="ubah.php?id=<?= $pensil['id']; ?>">Ubah</a> |
+                        <a class="hapus" href="hapus.php?id=<?= $pensil["id"]; ?>" onclick="return confirm('Yakin Ingin Hapus ?');">Hapus</a>
+                    </td>
+                    <td><img src="img/<?= $pensil["gambar"]; ?>" width="60"></td>
+                    <td><?= $pensil["nim"]; ?></td>
+                    <td><?= $pensil["nama"]; ?></td>
+                    <td><?= $pensil["fakultas"]; ?></td>
+                    <td><?= $pensil["prodi"]; ?></td>
+                    <td><?= $pensil["email"]; ?></td>
+                </tr>
+                <?php $hitung++; ?>
+            <?php endforeach ?>
         </tbody>
     </table>
 

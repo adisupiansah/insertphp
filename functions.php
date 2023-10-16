@@ -45,3 +45,30 @@ function hapus($hapus)
 
     return mysqli_affected_rows($kon);
 }
+
+// sourcode functioon ubah
+function ubah($data)
+{
+    global $kon;
+
+    $id = $data['id'];
+    $nim = htmlspecialchars($data['nim']);
+    $nama = htmlspecialchars($data['nama']);
+    $fakultas = htmlspecialchars($data['fakultas']);
+    $prodi = htmlspecialchars($data['prodi']);
+    $email = htmlspecialchars($data['email']);
+    $gambar = htmlspecialchars($data['gambar']);
+
+    $query = "UPDATE daftar SET
+                    nim = '$nim',
+                    nama = '$nama',
+                    fakultas = '$fakultas',
+                    prodi = '$prodi',
+                    email = '$email',
+                    gambar = '$gambar' 
+                WHERE id = $id";
+
+    mysqli_query($kon, $query);
+
+    return mysqli_affected_rows($kon);
+}
