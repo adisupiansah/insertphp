@@ -66,7 +66,6 @@ function ubah($data)
     if ($_FILES['gambar']['erorr'] === 4) {
 
         $gambar = $gambarLama;
-        
     } else {
         $gambar = upload();
     }
@@ -86,27 +85,28 @@ function ubah($data)
     return mysqli_affected_rows($kon);
 }
 
-function upload () {
+function upload()
+{
     $fileName = $_FILES['gambar']['name'];
     $fileSize = $_FILES['gambar']['size'];
     $error = $_FILES['gambar']['error'];
     $storage = $_FILES['gambar']['tmp_name'];
 
-// cek apakah ada gambar di upload, jika tidak ada maka program tidak di jalankan (return false) ?
-if ($error === 4) {
-    echo "
+    // cek apakah ada gambar di upload, jika tidak ada maka program tidak di jalankan (return false) ?
+    if ($error === 4) {
+        echo "
         <script>
             alert('Mohon mengisi gambar terlebih dahulu');
         </script>
     ";
-    return false;
-}
+        return false;
+    }
     //cek, apakah yang di input user adalaha gambar 
     $fileGambar = ['jpg', 'jpeg', 'png'];
-    $ekstensi = explode ('.', $fileName);
+    $ekstensi = explode('.', $fileName);
     $ekstensi = strtolower(end($ekstensi));
 
-    if ( !in_array($ekstensi, $fileGambar)) {
+    if (!in_array($ekstensi, $fileGambar)) {
         echo "
             <script>
                 alert('Yang Anda Upload Bukan File Gambar');
@@ -116,7 +116,7 @@ if ($error === 4) {
     }
 
     // cek batas maksimal ukuran file
-    if ( $fileSize > 1000000 ) {
+    if ($fileSize > 1000000) {
         echo "
             <script>
                 alert('Ukuran terlalu besar, batas maximal gambar 1 mb');
@@ -132,8 +132,48 @@ if ($error === 4) {
 
 
     // tempat penympanan gambar jika lolos pengecekan, dan berhasil  di upload
-    move_uploaded_file($storage, 'penyimpanan/' .$newNameFile);
+    move_uploaded_file($storage, 'penyimpanan/' . $newNameFile);
 
     return $newNameFile;
+}
 
+
+// function registrasi
+function regis($daftar)
+{
+    global $kon;
+
+    $user = strtolower(stripslashes($daftar['username']));
+    $pass = mysqli_escape_string($kon, $daftar['password']);
+    $pass2 = mysqli_escape_string($kon, $daftar['password2']);
+
+    // cek....apakah user sudah mempunyai data apa belum
+    $simpanQuery = mysqli_query($kon, "SELECT username FROM user WHERE username = '$user'");
+
+    if (mysqli_fetch_assoc($simpanQuery)) {
+        echo "
+                <script>
+                    alert('Username sudah terdaftar');
+                </script>
+            ";
+        return false;
+    }
+
+    // cek konfirmasi password
+    if ($pass !== $pass2) {
+        echo "
+                <script>
+                    alert('password salah');
+                </script>
+            ";
+        return false;
+    }
+
+    // enkripsi password
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
+
+    // jika user sudah emngisi form regis, daftar baru username akan dikirimkan ke databse
+    mysqli_query($kon, "INSERT INTO user VALUES ('', '$user', '$pass')");
+
+    return mysqli_affected_rows($kon);
 }

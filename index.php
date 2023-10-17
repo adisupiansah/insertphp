@@ -30,7 +30,8 @@
             <div class="container">
                 <h1>Selamat Datang di Universitas Terbuka</h1>
                 <p>menyediakan program pendidikan tinggi yang mudah diakses masyarakat</p>
-                <a href="login.php" type="submit" class="btn btn-primary btn-sm shadow-p-3">Login Mahasiswa</a>
+                <a href="registrasi.php" type="submit" class="btn btn-primary btn-sm shadow-p-3">Registrasi</a>
+                <a href="login.php" type="submit" class="btn btn-primary btn-sm shadow-p-3">Login </a>
             </div>
         </div>
     </div>
