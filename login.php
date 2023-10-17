@@ -63,7 +63,7 @@ if (isset($_POST["submit"])) {
                         <br>
                         <!-- note : element required berfungsi untuk ketika si user lupa mengisi salah satu form, maka tombol button tidak dijalankan -->
 
-                        <button class="btn btn-primary " type="submit" name="submit">Kirim Data</button>
+                        <button class="btn btn-primary " type="submit" name="submit">Login</button>
                     </ul>
 
                 </form>

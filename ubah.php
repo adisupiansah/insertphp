@@ -62,7 +62,7 @@ if (isset($_POST["submit"])) {
 
                 <!-- form -->
 
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $dftr['id']; ?>">
                     <ul>
 
@@ -82,7 +82,8 @@ if (isset($_POST["submit"])) {
                         <input class="form-control" type="text" required value = "<?= $dftr['email']; ?>" placeholder="Masukan email" name="email" id="email" aria-label="default input example" required>
 
                         <label for="gambar">Gambar :</label>
-                        <input class="form-control" type="text" required value = "<?= $dftr['gambar']; ?>" placeholder="Masukan gambar contoh(tengku.jpg)" name="gambar" id="gambar" aria-label="default input example" required>
+                        <img src="img/<?= $dftr['gambar']; ?>" width="30">
+                        <input class="form-control" type="file" name="gambar" id="gambar" aria-label="default input example" required>
                         <br>
                         <!-- note : element required berfungsi untuk ketika si user lupa mengisi salah satu form, maka tombol button tidak dijalankan -->
 

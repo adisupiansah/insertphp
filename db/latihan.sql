@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2023 at 11:49 PM
+-- Generation Time: Oct 16, 2023 at 08:22 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -42,7 +42,8 @@ CREATE TABLE `daftar` (
 --
 
 INSERT INTO `daftar` (`id`, `nim`, `nama`, `fakultas`, `prodi`, `email`, `gambar`) VALUES
-(16, '20100701', 'Adi Supiansyah', 'Sains & Teknologi', 'Teknik Informatika', 'adisupiansah15@gmail.com', 'adi.png');
+(29, '20100701', 'Adi supiyansah', 'Sains dan Teknologi', 'Teknik Informatika', 'adisupiansah15@gmail.com', 'adi.png'),
+(30, '20198765', 'Bela Syahfira', 'FISHUM', 'Akuntasi', 'belasyahfira@gmail.com', 'bela.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `daftar`
 -- AUTO_INCREMENT for table `daftar`
 --
 ALTER TABLE `daftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -56,7 +56,7 @@ if (isset($_POST["submit"])) {
             <div class="card-body">
                 <h1 class="card-title text-center mb-4">Masukan Data </h1>
 
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <ul>
 
                         <label for="nim">NIM :</label>
@@ -75,7 +75,7 @@ if (isset($_POST["submit"])) {
                         <input class="form-control" type="text" placeholder="Masukan email" name="email" id="email" aria-label="default input example" required>
 
                         <label for="gambar">Gambar :</label>
-                        <input class="form-control" type="text" placeholder="Masukan gambar contoh(tengku.jpg)" name="gambar" id="gambar" aria-label="default input example" required>
+                        <input class="form-control" type="file" placeholder="Masukan gambar contoh(tengku.jpg)" name="gambar" id="gambar" aria-label="default input example" required>
                         <br>
                         <!-- note : element required berfungsi untuk ketika si user lupa mengisi salah satu form, maka tombol button tidak dijalankan -->
 

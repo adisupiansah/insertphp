@@ -57,10 +57,10 @@ $daftar = query("SELECT * FROM daftar");
                 <tr>
                     <td><?= $hitung; ?></td>
                     <td>
-                        <a class="buton" href="ubah.php?id=<?= $pensil['id']; ?>">Ubah</a> |
+                        <a class="buton" href="ubah.php?id=<?= $pensil['id']; ?>">Edit</a> |
                         <a class="hapus" href="hapus.php?id=<?= $pensil["id"]; ?>" onclick="return confirm('Yakin Ingin Hapus ?');">Hapus</a>
                     </td>
-                    <td><img src="img/<?= $pensil["gambar"]; ?>" width="60"></td>
+                    <td><img src="penyimpanan/<?= $pensil["gambar"]; ?>" width="60"></td>
                     <td><?= $pensil["nim"]; ?></td>
                     <td><?= $pensil["nama"]; ?></td>
                     <td><?= $pensil["fakultas"]; ?></td>
